@@ -1,0 +1,10 @@
+{
+  "name": "RKSV",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~4.15.2",
+    "body-parser": "~1.17.1",
+    "mongoose": "~4.8.6",
+    "html": "~1.0.0"
+  }
+}
