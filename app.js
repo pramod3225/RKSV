@@ -1,7 +1,7 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
-//var config = require('./config');
 var app = express();
 // view engine setup
 app.set('port', process.env.PORT || 3000);
@@ -11,7 +11,7 @@ app.set('view engine', null);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-
+app.use(cookieParser());
 var server = http.createServer(app).listen(3000, function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
@@ -45,7 +45,7 @@ if (app.get('env') === 'development') {
 
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
-    res.render( {
+    res.send( {
         message: err.message,
         error: {}
     });
