@@ -1,0 +1,68 @@
+1. addCustomer (For Adding A new Customer)
+    Request Body    -{"email":"pramod5@gmail.com"}
+    Request Param   - No Param
+    Response Body   -{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":false,"payback":0,"referral_id":null}
+    API Name        -/api/addCustomer
+    API Type        - POST
+
+2. getCustomerById (For fetching a customer details by ID)
+    Request Body    -NA
+    Request Param   -id(customer id)
+    Response Body   -{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":false,"payback":0,"referral_id":null}
+    API Name        -/api/getCustomerById/:id
+    API Type        -GET
+
+
+3. addReferral (For Adding A Referral Under A Customer)
+    Request Body    -{"referral_id":4,"email":"pramod5@gmail.com"}
+    Request Param   -No Param
+    Response Body   -{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":false,"payback":0,"referral_id":4}
+    API Name        -/api/addReferral
+    API Type        -POST
+
+
+4. fetchAllChildren (Fetch All Children Under A Customer)
+    Request Body    -NA
+    Request Param   -id(customer id)
+    Response Body   -[{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":false,"payback":0,"referral_id":4}]
+    API Name        -/api/fetchAllChildren/:id
+    API Type        -GET
+
+
+5. fetchAllCustomersWithReferralCount (Fetch all customers with the number of childrens referred by them in ascending or descending order)
+    Request Body    -NA
+    Request Param   -NA
+    Response Body   -[{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":false,"payback":0,"referral_id":4}]
+    API Name        -/api/fetchAllCustomersWithReferralCount
+    API Type        -GET
+
+6. addAmbassador(For Adding A new ambassador)
+    Request Body    -{"email":"pramod5@gmail.com"}
+    Request Param   -NA
+    Response Body   -{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":true,"payback":0,"referral_id":null}
+    API Name        -/api/addAmbassador
+    API Type        -POST
+
+
+7. convertCustomerToAmbassador (A customer can be converted to an Ambassador.But will get additional 10% only on the customers added under him after the time he got converted.)
+    Request Body    -NA
+    Request Param   -id(customer id)
+    Response Body   -{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":true,"payback":0,"referral_id":null}
+    API Name        -/api/convertCustomerToAmbassador/:id
+    API Type        -PUT
+
+
+8. fetchAllAmbassadorChildren (Fetch All Children of an Ambassador)
+    Request Body    -
+    Request Param   -
+    Response Body   -[{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":false,"payback":0,"referral_id":4}]
+    API Name        -/api/fetchAllAmbassadorChildren
+    API Type        -GET
+
+
+9. fetchChildrenAtNthLEvel (Fetch all ambassador children at nth level)
+    Request Body    -NA
+    Request Param   -n(no of Level)
+    Response Body   -[{"_id":"58c45404526ad54bddf34490","customer_id":1,"email":"pramod5@gmail.com","__v":0,"lastUpdated":"2017-03-12T07:35:25.988Z","joiningDate":"2017-03-11T19:46:12.886Z","isAmbassador":false,"payback":0,"referral_id":4}]
+    API Name        -/api/fetchChildrenAtNthLevel/:n
+    API Type        -GET

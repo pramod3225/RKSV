@@ -12,7 +12,7 @@ var counter = db.model('counter', CounterSchema);
 var customerSchema = new Schema({
     customer_id : Number,
     email : String,
-    referral_id :{type: Schema.ObjectId, default: null},
+    referral_id :{type: Number, default: null},
     payback: {type: Number, default: 0},
     isAmbassador : {type: Boolean, default: false},
     joiningDate : {type: Date,  default: Date.now},
